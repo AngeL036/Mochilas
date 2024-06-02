@@ -1,0 +1,40 @@
+<!-- library/templates/library/listar_productos.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Código</th>
+                <th>Proveedor</th>
+                <th>Fecha</th>
+                <th>Cantidad</th>
+                <th>Precio Unidad</th>
+                <th>Precio Ganancias</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.codigo }}</td>
+                <td>{{ producto.proveedor }}</td>
+                <td>{{ producto.fecha }}</td>
+                <td>{{ producto.cantidad }}</td>
+                <td>{{ producto.precio_unidad }}</td>
+                <td>{{ producto.precio_ganancias }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'indexView' %}">Volver al inicio</a>
+</body>
+</html>
